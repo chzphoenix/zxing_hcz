@@ -305,7 +305,8 @@ public final class CaptureActivity extends Activity implements
 		if (points != null && points.length > 0) {
 			Canvas canvas = new Canvas(barcode);
 			Paint paint = new Paint();
-			paint.setColor(getResources().getColor(R.color.result_points));
+			//TODO 完成图片上关键点的颜色
+			paint.setColor(0xc099cc00);
 			if (points.length == 2) {
 				paint.setStrokeWidth(4.0f);
 				drawLine(canvas, paint, points[0], points[1], scaleFactor);
@@ -339,7 +340,6 @@ public final class CaptureActivity extends Activity implements
 	// Put up our own UI for how to handle the decoded contents.
 	private void handleDecodeInternally(Result rawResult, Bitmap barcode) {
 
-		System.out.println("sssss");
 		CharSequence displayContents = ResultParser.parseResult(rawResult)
 				.getDisplayResult();
 
